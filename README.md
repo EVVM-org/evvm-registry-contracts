@@ -1,66 +1,99 @@
-## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# Registry-Evvm-Contracts
 
-Foundry consists of:
+Main repository for EVVM contracts. Here, all contract implementations for the Ethereum Virtual Virtual Machine (EVVM) are developed, tested, and promoted. The entire lifecycle (prototyping, validation, promotion, and production) takes place within this same repository.
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+---
+
+## Workflow
+
+1. **Development & Experimentation:** New ideas and features are implemented and tested directly here.
+2. **Validation:** If a feature passes all local and CI tests, it is considered for promotion.
+3. **Promotion:** Validated features are deployed to testnet.
+4. **Production:** After testnet validation, features are promoted to mainnet.
+
+---
+
+## Prerequisites
+
+- [Foundry](https://getfoundry.sh/) (for Solidity development and testing)
+- Node.js (for package management)
+
+## Installation
+
+Install dependencies and compile contracts:
+
+```bash
+make install
+```
+
+## Local Development
+
+Start a local Anvil chain:
+
+```bash
+make anvil
+# In another terminal:
+make mock  # Deploy mock contracts
+```
+
+## Compilation
+
+Recompile contracts:
+
+```bash
+make compile
+```
+
+## Testing
+
+Run all unit tests:
+
+```bash
+make test
+# Or directly with Foundry:
+forge test
+```
+
+## Formatting
+
+Format Solidity code:
+
+```bash
+forge fmt
+```
+
+## Deployment
+
+Example script deployment:
+
+```bash
+forge script script/DeployRegistryEvvm.s.sol --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+## Included Tools
+
+- **Forge**: Ethereum testing framework
+- **Cast**: Utility for interacting with contracts and chain data
+- **Anvil**: Local EVM-compatible node
+- **Chisel**: Solidity REPL
 
 ## Documentation
 
-https://book.getfoundry.sh/
+See the official Foundry documentation: [https://book.getfoundry.sh/](https://book.getfoundry.sh/)
 
-## Usage
+## Project Structure
 
-### Build
+- `src/` — Main contracts
+- `test/` — Unit and integration tests
+- `lib/` — External libraries (OpenZeppelin, forge-std, etc.)
+- `script/` — Deployment and utility scripts
 
-```shell
-$ forge build
-```
+## Contributing
 
-### Test
+1. Fork the repository
+2. Create a feature branch and make your changes
+3. Add tests for new features
+4. Submit a PR with a detailed description
 
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+> **Security Note**: Never commit real private keys. Use test credentials only.
