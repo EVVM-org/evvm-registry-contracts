@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Script, console2} from "forge-std/Script.sol";
 import {ERC1967Proxy} from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
-import {RegistryEvvm} from "@EVVM/registry/RegistryEvvm.sol";
+import {RegistryEvvm} from "@evvm/evvm-registry-contracts/RegistryEvvm.sol";
 
 
 contract DeployRegistryEvvm is Script {

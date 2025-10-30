@@ -4,7 +4,7 @@ out = "out"
 libs = ["lib"]
 remappings = [
     '@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/',
-    '@EVVM/registry/=src/',
+    '@evvm/evvm-registry-contracts/=src/',
     'solidity-bytes-utils/=lib/solidity-bytes-utils/',
     '@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/',
 ]

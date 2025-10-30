@@ -20,7 +20,7 @@ import "forge-std/console2.sol";
 import {Constants, RegistryEvvmTestTwo} from "test/Constants.sol";
 
 import {ERC1967Proxy} from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
-import {RegistryEvvm} from "@EVVM/registry/RegistryEvvm.sol";
+import {RegistryEvvm} from "@evvm/evvm-registry-contracts/RegistryEvvm.sol";
 
 contract unitTestRevert_RegistryEvvm__SudoRegisterEvvm is Test, Constants {
     RegistryEvvm registryEvvm;
